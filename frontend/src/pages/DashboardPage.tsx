@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useMemo, useState, type FormEvent } from "react";
 import { ErrorDisplay, EmptyState } from "../components/StateDisplay";
 import { LoadingSpinner } from "../components/LoadingSkeletons";
+import { DarkModeToggle } from "../components/DarkModeToggle";
 import { useAuth } from "../context/AuthContext";
 import { applicationApi } from "../lib/api";
 import { getErrorMessage } from "../hooks/useAsync";
@@ -354,6 +355,7 @@ export const DashboardPage = () => {
           </nav>
 
           <div className="flex items-center gap-2">
+            <DarkModeToggle />
             <NavLink
               to="/applications"
               className="rounded-full bg-indigo-500 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-indigo-400 md:hidden"

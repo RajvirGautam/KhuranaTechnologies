@@ -28,6 +28,7 @@ import { FollowUpModal } from "../components/FollowUpModal";
 import { ErrorDisplay, EmptyState } from "../components/StateDisplay";
 import { LoadingSpinner } from "../components/LoadingSkeletons";
 import { useAuth } from "../context/AuthContext";
+import { DarkModeToggle } from "../components/DarkModeToggle";
 import { applicationApi, type ApplicationInput } from "../lib/api";
 import { addDaysToDateInputValue, getTodayDateInputValue, toDateInputValue, toIsoUtcStartOfDay } from "../lib/date";
 import { getErrorMessage } from "../hooks/useAsync";
@@ -478,7 +479,7 @@ const DraggableBoardCard = ({
         registerRef?.(element);
       }}
       style={style}
-      className={`relative overflow-visible cursor-grab rounded-xl bg-white shadow-sm active:cursor-grabbing transition-[transform,box-shadow,border-color,background-color,opacity] duration-300 ${compact ? "px-2 py-1.5" : "p-3"} ${menuOpen ? "z-[70]" : isDragging ? "z-[60]" : "z-20"} ${
+      className={`kanban-status-card relative overflow-visible cursor-grab rounded-xl bg-white shadow-sm active:cursor-grabbing transition-[transform,box-shadow,border-color,background-color,opacity] duration-300 ${compact ? "px-2 py-1.5" : "p-3"} ${menuOpen ? "z-[70]" : isDragging ? "z-[60]" : "z-20"} ${
         isHighlighted
           ? "application-card-highlight border border-cyan-300 bg-cyan-50 shadow-[0_0_0_1px_rgba(34,211,238,0.6),0_0_0_16px_rgba(34,211,238,0.16),0_16px_44px_rgba(8,145,178,0.28)]"
           : ""
@@ -1180,6 +1181,8 @@ export const BoardPage = () => {
           >
             Dashboard
           </NavLink>
+
+          <DarkModeToggle />
 
         </header>
 

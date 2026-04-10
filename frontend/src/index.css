@@ -697,3 +697,313 @@ body {
     padding: 0.62rem 1.15rem;
   }
 }
+
+/* =========================================================
+   DARK MODE OVERRIDES
+   All rules below are scoped to .dark on <html>.
+   Light mode styles above are UNTOUCHED.
+   ========================================================= */
+
+/* ---------- Global body background ---------- */
+.dark body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(139, 27, 100, 0.18), transparent 35%),
+    radial-gradient(circle at 92% 14%, rgba(14, 100, 140, 0.22), transparent 38%),
+    linear-gradient(145deg, #0f0f14, #111827 55%, #0d1117);
+}
+
+/* ---------- CSS root tokens in dark mode ---------- */
+.dark {
+  --lp-ink: #e8e6e0;
+  --lp-muted: #9a9892;
+  --lp-paper: #131210;
+  --lp-accent: #2dd4bf;
+  --lp-accent-dark: #5eead4;
+}
+
+/* ---------- Landing shell background ---------- */
+.dark .lp-shell {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(17, 94, 89, 0.22), transparent 34%),
+    radial-gradient(circle at 88% 16%, rgba(120, 78, 15, 0.18), transparent 34%),
+    linear-gradient(155deg, #111210 0%, #141310 45%, #111715 100%);
+}
+
+/* ---------- Orbs ---------- */
+.dark .lp-orb-left  { background: #0d4a41; opacity: 0.35; }
+.dark .lp-orb-right { background: #6b4c10; opacity: 0.28; }
+
+/* ---------- Logo mark — keep its original black ink look in both modes ---------- */
+/* (no override — the logo uses var(--lp-ink) in light mode which is #1f1f1a,
+   intentionally not inverted in dark mode so the logo dot stays recognisable) */
+.dark .lp-logo-mark { background: #1f1f1a; }
+
+/* ---------- Top nav ---------- */
+.dark .lp-topnav {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(13, 14, 18, 0.82);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.dark .lp-topnav.lp-topnav-scrolled {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(13, 14, 18, 0.94);
+  box-shadow:
+    0 9px 20px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* ---------- Nav pills ---------- */
+.dark .lp-nav-pill { color: #a6a39c; }
+.dark .lp-nav-pill:hover { background: rgba(255, 255, 255, 0.07); color: var(--lp-ink); }
+
+/* ---------- Nav CTA ---------- */
+.dark .lp-nav-cta  { background: #e8e6e0; color: #111210; }
+.dark .lp-nav-cta:hover { background: #d4d0c8; }
+
+/* ---------- Primary / secondary buttons ---------- */
+.dark .lp-primary-btn  { background: #e8e6e0; color: #111210; }
+.dark .lp-primary-btn:hover  { background: #d4d0c8; }
+.dark .lp-secondary-btn { background: rgba(255, 255, 255, 0.1); color: var(--lp-ink); }
+.dark .lp-secondary-btn:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* ---------- Grid overlay lines ---------- */
+.dark .lp-grid-overlay {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* ---------- Floating hero cards ---------- */
+.dark .lp-float-card {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(25, 27, 35, 0.92);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+.dark .lp-float-name { color: #dedad3; }
+.dark .lp-progress   { background: #2a2928; }
+.dark .lp-float-pill {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(25, 27, 35, 0.92);
+  color: #ccc8c0;
+}
+
+/* ---------- Board teaser cards (landing) ---------- */
+.dark .lp-board-card  { border-color: rgba(255, 255, 255, 0.06); box-shadow: 0 16px 34px rgba(0, 0, 0, 0.55); }
+.dark .lp-board-company  { color: #dedad3; }
+.dark .lp-board-role     { color: #908d87; }
+.dark .lp-board-date     { color: rgba(150, 147, 140, 0.9); }
+.dark .lp-board-footer   { color: #7a776f; }
+.dark .lp-board-compensation { background: rgba(255, 255, 255, 0.06); color: #ccc8c0; }
+.dark .lp-board-menu {
+  background: rgba(30, 32, 40, 0.95);
+  color: #a1a09a;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Status badge dark variants ---------- */
+.dark .lp-board-status-blue    { background: rgba(30, 58, 138, 0.8);  color: #93c5fd; }
+.dark .lp-board-status-amber   { background: rgba(92, 56, 5, 0.8);    color: #fcd34d; }
+.dark .lp-board-status-violet  { background: rgba(76, 29, 149, 0.8);  color: #c4b5fd; }
+.dark .lp-board-status-emerald { background: rgba(6, 78, 59, 0.8);    color: #6ee7b7; }
+.dark .lp-board-status-applied   { background: rgba(30,58,138,0.7);   color: #93c5fd; }
+.dark .lp-board-status-interview { background: rgba(76,29,149,0.7);   color: #c4b5fd; }
+.dark .lp-board-status-offer     { background: rgba(6,78,59,0.7);     color: #6ee7b7; }
+
+/* ---------- Footer ---------- */
+.dark .lp-footer {
+  border-color: rgba(255, 255, 255, 0.07);
+  background:
+    radial-gradient(circle at 16% 20%, rgba(255, 255, 255, 0.04), transparent 44%),
+    linear-gradient(155deg, rgba(18, 16, 14, 0.96) 0%, rgba(20, 18, 15, 0.94) 48%, rgba(16, 20, 18, 0.95) 100%);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.dark .lp-footer-title { color: #706d66; }
+.dark .lp-footer-links a,
+.dark .lp-footer-links span { color: #a6a39c; }
+.dark .lp-footer-links a:hover { color: var(--lp-ink); }
+.dark .lp-social-link {
+  background: rgba(255, 255, 255, 0.05);
+  color: #a6a39c;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.dark .lp-social-link:hover { background: rgba(255, 255, 255, 0.09); color: var(--lp-ink); }
+.dark .lp-footer-mobile-chip {
+  color: #b0ada6;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- Auth overlay / backdrop ---------- */
+.dark .lp-auth-backdrop {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(17, 94, 89, 0.26), transparent 43%),
+    radial-gradient(circle at 84% 16%, rgba(120, 78, 15, 0.22), transparent 44%),
+    radial-gradient(circle at 52% 84%, rgba(14, 100, 140, 0.22), transparent 54%),
+    linear-gradient(152deg, rgba(14, 14, 18, 0.56), rgba(16, 20, 18, 0.62));
+  backdrop-filter: blur(14px) saturate(110%);
+}
+
+/* ---------- Focus ring ---------- */
+.dark .lp-shell a:focus-visible,
+.dark .lp-shell button:focus-visible { outline-color: var(--lp-accent); }
+
+/* =========================================================
+   DARK MODE — Tailwind utility class overrides
+   Applied as attribute-selector overrides so we don't have
+   to touch every JSX file. Scoped to .dark on <html>.
+   ========================================================= */
+
+/* Outer page wrappers (DashboardPage, BoardPage) */
+.dark [class*="from-[#f6e8f4]"],
+.dark [class*="from-\\[\\#f6e8f4\\]"] {
+  background: linear-gradient(145deg, #0e0917, #0d1117) !important;
+}
+.dark [class*="bg-[#f8f9ff]"],
+.dark [class*="bg-\\[\\#f8f9ff\\]"] {
+  background-color: #0f1117 !important;
+}
+.dark [class*="bg-gradient-to-b"] {
+  background-image: linear-gradient(to bottom, #0e0917, #0d1117) !important;
+}
+
+/* Header glass */
+.dark header[class*="bg-white"] {
+  background-color: rgba(15, 17, 25, 0.85) !important;
+  border-color: rgba(255,255,255,0.07) !important;
+}
+
+/* White cards → dark base — but NOT coloured highlight cards */
+/* Neutral white cards go dark */
+.dark article[class*="bg-white"]:not([class*="kanban-status-card"]),
+.dark form[class*="bg-white"],
+.dark [class*="rounded-2xl"][class*="bg-white"][class*="shadow"],
+.dark [class*="rounded-xl"][class*="bg-white"][class*="shadow"],
+.dark [class*="rounded-lg"][class*="bg-white"][class*="shadow"],
+.dark [class*="rounded-3xl"][class*="bg-white"][class*="shadow"] {
+  background-color: #181a24 !important;
+  border-color: rgba(255,255,255,0.07) !important;
+}
+
+/* Kanban card overrides — preserve the coloured highlight states */
+/* Normal (no tint) kanban card */
+.dark article[class*="bg-white"]:not([class*="kanban-status-card"]):not([class*="bg-rose-"]):not([class*="bg-amber-"]):not([class*="bg-fuchsia-"]):not([class*="bg-cyan-"]) {
+  background-color: #1c1f2e !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+/* Overdue cards — keep rose tint, just darken it */
+.dark article[class*="bg-rose-50"]:not([class*="kanban-status-card"]) {
+  background-color: rgba(159, 18, 57, 0.22) !important;
+  border-color: rgba(251,113,133,0.4) !important;
+}
+/* Today follow-up — keep amber tint */
+.dark article[class*="bg-amber-50"]:not([class*="kanban-status-card"]) {
+  background-color: rgba(120, 53, 15, 0.25) !important;
+  border-color: rgba(253,186,116,0.4) !important;
+}
+/* Stale follow-up — keep fuchsia tint */
+.dark article[class*="bg-fuchsia-50"]:not([class*="kanban-status-card"]) {
+  background-color: rgba(112, 26, 117, 0.25) !important;
+  border-color: rgba(240,171,252,0.4) !important;
+}
+/* Highlighted / newly added card — keep cyan tint */
+.dark article[class*="bg-cyan-50"]:not([class*="kanban-status-card"]) {
+  background-color: rgba(8, 145, 178, 0.18) !important;
+  border-color: rgba(34,211,238,0.45) !important;
+}
+
+/* Inner chart / chart backgrounds */
+.dark [class*="bg-slate-50"] { background-color: #14161f !important; }
+.dark [class*="bg-slate-100"] { background-color: #1a1d28 !important; }
+
+/* Text colours */
+.dark [class*="text-slate-800"]  { color: #e2e0da !important; }
+.dark [class*="text-slate-700"]  { color: #cac7c0 !important; }
+.dark [class*="text-slate-600"]  { color: #b5b2ab !important; }
+.dark [class*="text-slate-500"]  { color: #8a8880 !important; }
+.dark [class*="text-slate-400"]  { color: #6a6860 !important; }
+.dark [class*="text-stone-900"]  { color: #e2e0da !important; }
+
+/* Borders */
+.dark [class*="border-slate-200"] { border-color: rgba(255,255,255,0.08) !important; }
+.dark [class*="border-slate-300"] { border-color: rgba(255,255,255,0.1) !important; }
+
+/* Input fields */
+.dark input[class*="border-slate-200"],
+.dark input[class*="bg-slate-50"] {
+  background-color: #1e2130 !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  color: #cac7c0 !important;
+}
+
+/* Modal overlays */
+.dark [class*="bg-slate-900\/30"],
+.dark [class*="bg-slate-900\/35"] {
+  background-color: rgba(0,0,0,0.6) !important;
+}
+
+/* Hover utilities — be careful not to override coloured hover states */
+.dark [class*="hover:bg-slate-100"]:hover { background-color: rgba(255,255,255,0.05) !important; }
+.dark [class*="hover:bg-slate-50"]:hover  { background-color: rgba(255,255,255,0.03) !important; }
+.dark [class*="hover:bg-white"]:hover     { background-color: rgba(255,255,255,0.06) !important; }
+
+/* Kanban column drop zone */
+.dark [class*="bg-slate-100\/70"] { background-color: rgba(20,24,38,0.7) !important; }
+.dark [class*="bg-cyan-100\/70"]  { background-color: rgba(10,70,80,0.4) !important; }
+
+/* Progress bar tracks */
+.dark [class*="bg-slate-100"][class*="rounded-full"] {
+  background-color: #252830 !important;
+}
+
+/* ── Issue 5: Toolbar buttons (filter, sort, follow-up) ───────────────
+   In dark mode replace the bg-white/90 glass with a dark slate surface
+   so they don't read as bright white blobs against the dark board.
+   ──────────────────────────────────────────────────────────────────── */
+
+/* Icon-only mobile toolbar buttons */
+.dark button[class*="bg-white/90"][class*="rounded-xl"] {
+  background-color: rgba(30, 34, 50, 0.9) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+  color: #94a3b8 !important;
+}
+/* Full pill desktop toolbar buttons */
+.dark button[class*="bg-white/90"][class*="rounded-full"] {
+  background-color: rgba(30, 34, 50, 0.9) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  color: #94a3b8 !important;
+}
+/* Filter / sort dropdown panels */
+.dark [class*="rounded-2xl"][class*="border-slate-200"][class*="bg-white"][class*="shadow-2xl"] {
+  background-color: #181c2a !important;
+  border-color: rgba(255,255,255,0.1) !important;
+}
+/* Sort dropdown */
+.dark [class*="rounded-2xl"][class*="bg-white"][class*="shadow-2xl"][class*="backdrop-blur"] {
+  background-color: #181c2a !important;
+  border-color: rgba(255,255,255,0.1) !important;
+}
+/* Filter pill count badge */
+.dark [class*="bg-cyan-50"][class*="rounded-full"] {
+  background-color: rgba(14, 116, 144, 0.35) !important;
+  color: #67e8f9 !important;
+}
+/* Filter count row */
+.dark [class*="bg-slate-100"][class*="rounded-full"][class*="px-2"] {
+  background-color: rgba(255,255,255,0.07) !important;
+  color: #94a3b8 !important;
+}
+/* Clear button in filter panel */
+.dark button[class*="border-slate-200"][class*="bg-white"][class*="rounded-full"] {
+  background-color: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+  color: #94a3b8 !important;
+}
+/* Sort option hover */
+.dark [class*="text-slate-600"][class*="hover:bg-slate-100"]:hover {
+  background-color: rgba(255,255,255,0.06) !important;
+}
+
